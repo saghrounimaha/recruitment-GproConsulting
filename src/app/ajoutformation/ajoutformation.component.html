@@ -1,0 +1,123 @@
+<section class="overlape">
+  <div class="block no-padding">
+    <div data-velocity="-.1"
+         style="background: url(../../assets/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;"
+         class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3>AJOUTER formation</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="block no-padding">
+    <div class="container">
+      <div class="row no-gape">
+        <aside class="col-lg-3 column border-right">
+          <div class="widget">
+            <div class="tree_widget-sec">
+              <ul>
+                <li><a routerLink="/profileCentre" title=""><i class="la la-file-text"></i>Mon Profile</a></li>
+                <li><a routerLink="/listdemandeformation" title=""><i class="la la-briefcase"></i>la Liste de Demande Formation</a></li>
+                <li><a href="/ajoutformation" title=""><i class="la la-money"></i>Ajouter Formation</a></li>
+                <li><a href="#" title="" (click)="logout()"><i class="la la-unlink"></i>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <div class="col-lg-9 column">
+          <div class="padding-left">
+            <div class="profile-title">
+              <h3>AJOUTER formation</h3>
+
+            </div>
+            <div class="profile-form-edit">
+              <form>
+
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <span class="pf-title">titre formation</span>
+                    <div class="pf-field">
+                      <input type="text" placeholder="Job Title" [(ngModel)]="formation.titre_Formation"
+                             name="formation.titre_Formation"/>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <span class="pf-title">Durée</span>
+                    <div class="pf-field">
+                      <input type="text" [(ngModel)]="formation.duree_Formation"
+                             name="formation.duree_Formation"/>
+                    </div>
+                  </div>
+
+
+                  <div class="col-lg-6">
+                    <span class="pf-title">Prix Formation</span>
+                    <div class="pf-field">
+                      <input type="text" class="form-control" [(ngModel)]="formation.prix_Formation"
+                             name="prix_Formation">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12">
+                    <span class="pf-title">Date début Formation:</span>
+                    <div class="pf-field">
+                      <input type="date" class="form-control datepicker" [(ngModel)]="formation.date_Debut"
+                             name="formation.date_Debut"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <span class="pf-title"> Date fin de  Stage:</span>
+                    <div class="pf-field">
+                      <input type="date" class="form-control datepicker" [(ngModel)]="formation.date_Fin"
+                             name="formation.date_Fin"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <span class="pf-title">photo</span>
+
+                    <input type="file" (change)="recuperFile($event)"/>
+
+
+                  </div>
+                  <div class="col-lg-12">
+                    <span class="pf-title">Discription</span>
+                    <div class="pf-field">
+                      <textarea type="text" [(ngModel)]="formation.discrepition"
+                                name="formation.discrepition"></textarea>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="col-md-12">
+
+                  &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  <button class="button margin" (click)="ajouter()">Ajouter formation</button>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

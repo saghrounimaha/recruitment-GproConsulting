@@ -1,0 +1,141 @@
+<section class="overlape">
+  <div class="block no-padding">
+    <div data-velocity="-.1"
+         style="background: url(images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;"
+         class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3>profile Responsable Societe</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="block no-padding">
+    <div class="container">
+      <div class="row no-gape">
+        <aside class="col-lg-3 column border-right">
+          <div class="widget">
+            <div class="tree_widget-sec">
+              <ul>
+                <li><a routerLink="/profileSocite" title=""><i class="la la-file-text"></i>Mon Profile</a></li>
+                <li><a routerLink="/listdemandestage" title=""><i class="la la-briefcase"></i>la Liste de Demande Stage</a></li>
+                <li><a href="/ajouterstage" title=""><i class="la la-money"></i>Ajouter Stage</a></li>
+                <li><a href="#" title="" (click)="logout()"><i class="la la-unlink"></i>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </aside>
+        <div class="col-lg-9 column">
+          <div class="padding-left">
+            <div class="profile-title">
+              <h3>Mon Profile</h3>
+              <div class="upload-img-bar">
+
+                <img  class="rounded-circle"
+                      src="http://localhost:8080/upload/files/{{responsablesociete?.photo}}"
+                      height="100px"/>
+
+
+              </div>
+
+
+
+            </div>
+            <div class="profile-form-edit">
+              <form [formGroup]="registerSocieteForm">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <span class="pf-title">Nom</span>
+                    <div class="pf-field">
+                      <input type="text" formControlName="nom"  placeholder="{{responsablesociete?.nom}}"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <span class="pf-title">prenom</span>
+                    <div class="pf-field">
+                      <input type="text" formControlName="prenom" placeholder="{{responsablesociete?.prenom}}"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <span class="pf-title">Email</span>
+                    <div class="pf-field">
+                      <input type="text" placeholder="{{responsablesociete?.email}}">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3">
+                    <span class="pf-title">adresse</span>
+                    <div class="pf-field">
+                      <input type="text"  formControlName="adresse" placeholder="{{responsablesociete?.adresse}}"/>
+                    </div>
+                  </div>
+                  <div class="cfield">
+                    <input type="file"  (change)="recuperFile($event)" >
+                    <i class="la la-photo"></i>
+                  </div>
+
+                  <div class="social-edit">
+                    <h3>Social Edit</h3>
+
+                    <div class="row">
+
+                      <div class="col-lg-6">
+                        <span class="pf-title">siteWeb</span>
+                        <div class="pf-field">
+                          <input type="text"  formControlName="site_web" placeholder="{{responsablesociete?.site_web}}"/>
+                          <i class="fa fa-linkedin"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="contact-edit">
+                    <h3>Contact</h3>
+
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <span class="pf-title">Phone Number</span>
+                        <div class="pf-field">
+                          <input type="number"  formControlName="telephone" placeholder="{{responsablesociete?.telephone}}"/>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <span class="pf-title">Email</span>
+                        <div class="pf-field">
+                          <input type="email"  formControlName="email" placeholder="{{responsablesociete?.email}}"/>
+                        </div>
+                      </div>
+
+
+
+                    </div>
+
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+
+
+
+
+                  <div class="col-lg-12">
+                    <button  (click)="modifprofile()" type="submit">Update</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

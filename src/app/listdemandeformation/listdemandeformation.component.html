@@ -1,0 +1,92 @@
+<section class="overlape" xmlns:border-radiu="http://www.w3.org/1999/xhtml">
+  <div class="block no-padding">
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3>list demandes Formation</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="block no-padding">
+    <div class="container">
+      <div class="row no-gape">
+        <aside class="col-lg-3 column border-right">
+          <div class="widget">
+            <div class="tree_widget-sec">
+              <ul>
+                <li><a routerLink="/profileCentre" title=""><i class="la la-file-text"></i>Mon Profile</a></li>
+                <li><a routerLink="/listdemandeformation" title=""><i class="la la-briefcase"></i>la Liste de Demande Formation</a></li>
+                <li><a href="/ajoutformation" title=""><i class="la la-money"></i>Ajouter Formation</a></li>
+                <li><a href="/editformation(id)" title=""><i class="la la-money"></i>Edit Formation</a></li>
+
+                <li><a href="#" title="" (click)="logout()"><i class="la la-unlink"></i>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <div class="col-lg-9 column">
+          <div class="padding-left">
+            <div class="manage-jobs-sec">
+              <h3>Manage Jobs</h3>
+
+              <table>
+                <thead>listedemndes
+                <tr>
+                  <td>photo</td>
+                  <td>Title</td>
+                  <td>duree formation</td>
+                  <td>de a </td>
+
+                  <td>Status</td>
+                  <td>Action</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let d of listedemndeformation">
+                  <td>
+                    <span ><img src="http://localhost:8080/upload/files/{{d?.stagiaire?.photo}}" width="100" hight="20" class="rounded-circle"  style="border-radiu:50%" ></span>
+                  </td>
+                  <td>
+                    <div class="table-list-title">
+
+                      <h3><a  title=""></a></h3>
+                   {{d?.formation?.titre_Formation}}
+                    </div>
+                  </td>
+                  <td>
+                    <span class="applied-field">{{d?.formation.duree_Formation}}</span>
+                  </td>
+                  <td>
+                    <span>{{d?.formation.date_Debut|date}}</span><br />
+                    <span>{{d?.formation.date_Fin|date}}</span>
+                  </td>
+
+                  <td>
+                    <span class="status active">diponible</span>
+                  </td>
+                  <td>
+                    <ul class="action_job">
+                      <li><span>View Job</span><a href="#" title=""><i class="la la-eye"></i></a></li>
+                      <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
+                      <li><span>Delete</span><a  (click)="supprimer(d.id)" title=""><i class="la la-trash-o"></i></a></li>
+                    </ul>
+                  </td>
+                </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

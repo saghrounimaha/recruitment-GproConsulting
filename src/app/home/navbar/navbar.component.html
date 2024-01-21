@@ -1,0 +1,90 @@
+<div class="responsive-header" xmlns:http="http://www.w3.org/1999/xhtml">
+  <div class="responsive-menubar">
+    <div class="res-logo"><a title=""><img src="../../../assets/images/resource/logo.png" alt=""/></a></div>
+    <div class="menu-resaction">
+      <div class="res-openmenu">
+        <img src="../../../assets/images/icon.png" alt=""/> Menu
+      </div>
+      <div class="res-closemenu">
+        <img src="../../../assets/images/icon2.png" alt=""/> Close
+      </div>
+    </div>
+  </div>
+  <div class="responsive-opensec" >
+    <div class="btn-extars" >
+      <a routerLink="/ajouterstage" title="" class="post-job-btn" [hidden]="roleuser==='candidat'" ><i class="la la-plus" ></i>ajouter offre stage</a>
+      <a routerLink="/ajoutformation" title="" class="post-job-btn"><i class="la la-plus"></i>Ajouter formation</a>
+
+
+      <ul class="account-btns" [hidden]="ison">
+        <li class="signup-popup"><a title=""><i class="la la-key"></i> S'inscrire</a></li>
+        <li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Login</a></li>
+      </ul>
+      <ul class="account-btns" [hidden]="!ison">
+        <li><a title=""><i (click)="deconnecter()" class="la la-external-link-square"></i> decoonecter</a></li>
+      </ul>
+    </div><!-- Btn Extras -->
+    <form class="res-search">
+      <input type="text" placeholder="Job title, keywords or company name"/>
+      <button type="submit"><i class="la la-search"></i></button>
+    </form>
+
+  </div>
+</div>
+<header class="stick-top forsticky">
+  <div class="menu-sec" >
+    <div class="container" >
+      <div class="logo">
+        <a title=""><img  class="hidesticky" src="../../../assets/images/EnterpriseRecruitt_Logo.png " width="150" height="100" alt=""/>
+        </a>
+      </div><!-- Logo -->
+      <div class="btn-extars" >
+        <a routerLink="/ajouterstage" [hidden]="roleuser === 'candidat'" title="" class="post-job-btn"><i class="la la-plus"></i>Ajouter Stage</a>
+        <a routerLink="/ajoutformation" [hidden]="roleuser === 'candidat'"  title="" class="post-job-btn"><i class="la la-plus" ></i>Ajouter Formation</a>
+        <div  [hidden]="!ison" class="btns-profiles-sec">
+          <span><img width="50px" height="50px" src="http://localhost:8080/upload/files/{{userconnete?.photo}}" alt=""/> {{userconnete?.username}} <i
+            class="la la-angle-down"></i></span>
+          <ul>
+            <li><a (click)="routageprofile()" title=""><i class="la la-file-text"></i> Profile</a></li>
+            <li><a  [hidden]="roleuser !== 'ResponsableSociete'&& roleuser !== 'candidat'" routerLink="/listdemandestage" title=""><i class="la la-briefcase"></i>liste demande stage</a></li>
+            <li><a   [hidden]="roleuser !== 'ResponsableCentre'&& roleuser !== 'candidat'" routerLink="/listdemandeformation" title=""><i class="la la-money"></i>liste demande formation</a></li>
+            <li><a  [hidden]="roleuser !== 'candidat'" routerLink="/resume" title=""><i class="la la-paper-plane"></i>Creer Votre CV</a></li>
+            <li><a [hidden]="roleuser !== 'ResponsableCentre'" routerLink="/listformationbycent"  title=""><i class="la la-user"></i>la liste des formations</a></li>
+            <li><a  [hidden]="roleuser !== 'ResponsableSociete'" routerLink="/liststagebysociete" title=""><i class="la la-file-text"></i>la liste des Offre De Stage</a></li>
+            <li><a (click)="deconnecter()" title=""><i class="la la-unlink"></i>Déconnexion</a></li>
+          </ul>
+        </div>
+
+        <div class="wishlist-dropsec">
+          <span><i class="la la-heart" style="color:#fb236a"></i><strong>{{listfavorie?.length}} </strong></span>
+          <div class="wishlist-dropdown">
+            <p>list des favories :</p>
+            <ul class="scrollbar" *ngFor="let e  of listfavorie ; let i = index" >
+
+
+                <div class="job-listing">
+                  <div class="c-logo"> <img src="http://localhost:8080/upload/files/{{e?.offre_stage.responsableSociete?.photo}}"  width="100" height="100" /> </div>
+
+                  <div class="job-title-sec">
+                     <h3>{{e?.offre_stage.type}}</h3>
+                    <span>{{e?.offre_stage.titre_offre}}</span>
+                  </div>
+                </div><!-- Job -->
+
+              <hr>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="account-btns" [hidden]="ison">
+          <li class="signup-popup"><a title=""><i class="la la-key"></i>  S'inscrire</a></li>
+          <li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Login</a></li>
+        </ul>
+
+      </div><!-- Btn Extras -->
+
+    </div>
+  </div>
+</header>
+
+<!-- SIGNUP POPUP -->
